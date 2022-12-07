@@ -1,9 +1,9 @@
-const express = require('express');
-const webpack = require('webpack');
-const webpackDevMiddleware = require('webpack-dev-middleware');
+import express from 'express';
+import webpack from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
 
 const app = express();
-const config = require('./webpack.config.js');
+import config, { output } from './webpack.config.js';
 
 const compiler = webpack(config);
 
@@ -11,7 +11,7 @@ const compiler = webpack(config);
 // configuration file as a base.
 app.use(
   webpackDevMiddleware(compiler, {
-    publicPath: config.output.publicPath,
+    publicPath: output.publicPath,
   }),
 );
 
