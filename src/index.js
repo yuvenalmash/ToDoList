@@ -109,14 +109,14 @@ const edit = (index) => {
 };
 window.edit = edit
 
-// const save = (index) => {
-//   const input = document.getElementById(`descriptionInput${index}`).value;
-//   if (input === ""){return}
-//   let toDoList = JSON.parse(localStorage.getItem("allEntries"));
-//   toDoList[index].description = input
-//   localStorage.setItem("allEntries", JSON.stringify(toDos));
-//   toDos()
-// }
+const save = (index) => {
+  const input = document.getElementById(`descriptionInput${index}`).value;
+  if (input === ""){return}
+  let toDoList = JSON.parse(localStorage.getItem("allEntries"));
+  toDoList[index].description = input
+  localStorage.setItem("allEntries", JSON.stringify(toDos));
+  toDos()
+}
 
 window.save = save
 
