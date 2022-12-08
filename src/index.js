@@ -1,10 +1,9 @@
-import "./style.css";
-import { toDos, addIcons } from "./modules/ui.js";
-import { add } from "./modules/add.js";
+import './style.css';
+import { addIcons, toDos, add } from './modules/ui.js';
 
-
+// const toDoList = null
+// localStorage.setItem("allEntries", JSON.stringify(toDoList));
 addIcons();
 toDos();
-document.querySelector("#addBtn").addEventListener("click", add);
-document.querySelector("#refreshBtn").addEventListener("click", toDos);
-console.log(JSON.parse(localStorage.getItem("allEntries")));
+document.querySelector('#addBtn').addEventListener('click', add);
+document.querySelector('#refreshBtn').addEventListener('click', toDos);
