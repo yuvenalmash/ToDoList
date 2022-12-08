@@ -10,12 +10,6 @@ import enterIcon from "./images/enter.png";
 import binIcon from "./images/recycle-bin.png";
 import saveIcon from "./images/save1.png"
 
-// const task1 = { description: 'task1', completed: false, index: 1 };
-// const task2 = { description: 'task2', completed: false, index: 2 };
-// const task3 = { description: 'task3', completed: false, index: 3 };
-// const task4 = { description: 'task4', completed: false, index: 4 };
-// const toDoList = [task1, task2, task3, task4];
-
 // const addToHtml = (child, parentId) => {
 //   const parent = document.getElementById(parentId);
 //   parent.innerHTML += child;
