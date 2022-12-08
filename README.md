@@ -11,7 +11,7 @@
 
 # 📗 Table of Contents
 
-- [� Table of Contents](#-table-of-contents)
+- [📗 Table of Contents](#-table-of-contents)
 - [📖 \[To Do List(with webpack)\] ](#-to-do-listwith-webpack-)
   - [🛠 Built With ](#-built-with-)
     - [Tech Stack ](#tech-stack-)
@@ -46,7 +46,8 @@
 ### Key Features <a name="key-features"></a>
 
 
-- **[Web pack]**
+- **Web pack**
+- **uses local storage**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -110,7 +111,8 @@ To run the project, execute the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 
-- **Add functionality to application**
+- **add functionality to 'clear all copleted' button**
+- **add functionality to the checkbox**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
