@@ -56,23 +56,16 @@ const clearToDos = () => {
   parent.innerHTML = child;
 };
 
-const addCheckListener = (index) => {
-  const check = document.getElementById(`check${index}`)
-  check.addEventListener("click", function(){
-    updateStatus(check,index)})
-}
-
 export const toDos = () => {
   clearToDos();
   let toDoList = JSON.parse(localStorage.getItem('allEntries'));
   if (toDoList == null) { toDoList = []; }
   for (let i = 0; i < toDoList.length; i += 1) {
     listToDo(toDoList, i);
-    setStatus(i)
+    setStatus(i);
     addToHtml('<hr>', 'toDos');
   }
 };
-
 
 export const add = () => {
   const input = document.getElementById('inputToDo').value;
@@ -122,8 +115,7 @@ export const remove = (index) => {
   toDos();
 };
 
-
 window.edit = edit;
 window.save = save;
 window.remove = remove;
-window.updateStatus = updateStatus
+window.updateStatus = updateStatus;
