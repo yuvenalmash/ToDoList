@@ -1,0 +1,74 @@
+* {
+  margin: 0%;
+  color: rgb(77, 77, 77);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  border: solid 2px rgb(153, 153, 153);
+  box-shadow: 1px 1px 5px 6px rgb(153, 153, 153);
+  position: absolute;
+  top: 20%;
+}
+
+#container hr {
+  width: 100%;
+  padding: 0%;
+  color: aliceblue;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 1% 12px 3%;
+}
+
+#input {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 1% 10px 3%;
+}
+
+#inputToDo {
+  border: none;
+}
+
+#toDos {
+  display: flex;
+  flex-direction: column;
+}
+
+.toDo {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 1% 10px 3%;
+}
+
+.toDo div {
+  display: flex;
+  gap: 12px;
+}
+
+.descriptionInput {
+  border: none;
+  background-color: rgba(240, 248, 255, 0);
+}
+
+footer {
+  text-align: center;
+  background-color: rgb(221, 221, 221);
+  padding: 10px 0;
+}
+
+footer a {
+  text-decoration: none;
+  color: rgb(83, 83, 83);
+}
