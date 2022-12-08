@@ -121,12 +121,12 @@ const save = (index) => {
 window.save = save
 
 
-// const remove = (index) => {
-//   console.log('remove clicked')
-//   const storage = new TodoStorage
-//   storage.removeToDo(index)
-//   toDos()
-// }
+const remove = (index) => {
+  console.log('remove clicked')
+  const storage = new TodoStorage
+  storage.removeToDo(index)
+  toDos()
+}
 window.remove = remove
 
 
