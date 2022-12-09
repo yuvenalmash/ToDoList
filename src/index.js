@@ -12,7 +12,6 @@ const clearCompleted = () => {
   toDos();
 };
 
-
 addIcons();
 toDos();
 document.querySelector('#addBtn').addEventListener('click', add);
