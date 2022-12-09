@@ -35,7 +35,7 @@ export const listToDo = (toDoList, index) => {
   const child = `
     <div class="toDo" id="toDo${index}"> 
       <div>
-        <input id="check${index}" type="checkbox" onclick="updateStatus(${index})">
+        <input id="check${index}" type="checkbox" onchange="updateStatus(${index})">
         <div>
           <p id="description${index}" style="display:block;" onclick="edit(${index})">${toDo.description}</p>
           <input  id="descriptionInput${index}" class="descriptionInput" type="text" style="display:none;border=none;" value="${toDo.description}">
