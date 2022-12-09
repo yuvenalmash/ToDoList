@@ -6,6 +6,7 @@ import saveIcon from '../images/save1.png';
 
 import TodoStorage from './toDoStorage.js';
 import ToDo from './toDo.js';
+import { updateStatus, setStatus } from './statusUpdate.js';
 
 const addToHtml = (child, parentId) => {
   const parent = document.getElementById(parentId);
@@ -34,7 +35,7 @@ export const listToDo = (toDoList, index) => {
   const child = `
     <div class="toDo" id="toDo${index}"> 
       <div>
-        <input type="checkbox">
+        <input id="check${index}" type="checkbox" onchange="updateStatus(${index})">
         <div>
           <p id="description${index}" style="display:block;" onclick="edit(${index})">${toDo.description}</p>
           <input  id="descriptionInput${index}" class="descriptionInput" type="text" style="display:none;border=none;" value="${toDo.description}">
@@ -61,6 +62,7 @@ export const toDos = () => {
   if (toDoList == null) { toDoList = []; }
   for (let i = 0; i < toDoList.length; i += 1) {
     listToDo(toDoList, i);
+    setStatus(i);
     addToHtml('<hr>', 'toDos');
   }
 };
@@ -116,3 +118,4 @@ export const remove = (index) => {
 window.edit = edit;
 window.save = save;
 window.remove = remove;
+window.updateStatus = updateStatus;

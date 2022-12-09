@@ -1,12 +1,5 @@
 <a name="readme-top"></a>
 
-<div align="center">
-  <!-- You are encouraged to replace this logo with your own! Otherwise you can also remove it. -->
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
-
-</div>
-
 <!-- TABLE OF CONTENTS -->
 
 # 📗 Table of Contents
@@ -81,6 +74,7 @@ Install this project with:
 ```sh
   cd ToDoList
   npm install
+  npm run build
 ```
 
 ### Usage
@@ -90,6 +84,7 @@ To run the project, execute the following command:
 ```sh
   npm run server
 ```
+- open 'localhost:3000' to view the project in your browser
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
