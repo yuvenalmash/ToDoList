@@ -15,5 +15,5 @@ test("add todo", () => {
 test("remove todo", () => {
   storage.removeToDo(0)
   const toDoList = JSON.parse(localStorage.getItem("allEntries"));
-  expect(toDoList.length).toBe(0)
+  expect(toDoList).toHaveLength(0)
 })
