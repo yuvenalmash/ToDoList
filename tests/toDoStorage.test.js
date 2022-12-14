@@ -1,4 +1,4 @@
-import TodoStorage from "./src/modules/toDoStorage.js";
+import TodoStorage from "../src/modules/toDoStorage.js";
 const storage = new TodoStorage()
 
 test("add todo", () => {
