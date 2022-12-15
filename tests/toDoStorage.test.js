@@ -24,18 +24,23 @@ describe("delete todo()", () => {
   });
 });
 
-// describe("To do list functions", () => {
-//   test("editing todo tasks", () => {
-//     const task = {
-//       description: "Cat drinking milk",
-//       completed: false,
-//       index: 0,
-//     };
-//     storage.addToDo(task);
-//     const updatedTask = edit(task, "Cat eating");
-//     expected(updatedTask.description).toBe("Cat eating");
-//   });
-// });
+describe("To do list functions", () => {
+  test("editing todo tasks", () => {
+    const task = {
+      description: "Cat drinking milk",
+      completed: false,
+      index: 0,
+    };
+    storage.addToDo(task);
+    const index = 0;
+    const input = "Cat eating";
+
+    storage.saveToDo(index, input);
+    const toDoList = JSON.parse(localStorage.getItem("allEntries"));
+
+    expect(toDoList[0].description).toBe("Cat eating");
+  });
+});
 
 describe("Update completed tasks", () => {
   test("update completed status", () => {
@@ -60,3 +65,15 @@ describe("Update completed tasks", () => {
     expect(toDoList[0].completed).toBe(true);
   });
 });
+
+// test("clearCompleted should remove all completed items from the todo list", () => {
+//   const todoList = [
+//     { id: 1, description: "Wash the dishes", completed: false },
+//     { id: 2, description: "Do the laundry", completed: true },
+//     { id: 3, description: "Take out the trash", completed: true },
+//   ];
+
+//   const updatedTodoList = clearCompleted(todoList);
+//   expect(updatedTodoList.length).toBe(1);
+//   expect(updatedTodoList[0].id).toBe(1);
+// });

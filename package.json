@@ -1,13 +1,12 @@
 {
   "name": "webpack-demo",
   "version": "1.0.0",
-  "description": "",
+  "description": "<a name=\"readme-top\"></a>",
   "private": "true",
   "dependencies": {
     "express": "^4.18.2",
     "gh-pages": "^4.0.0",
     "lodash": "^4.17.21",
-    "webpack": "^5.75.0",
     "webpack-dev-middleware": "^6.0.1"
   },
   "devDependencies": {
@@ -49,5 +48,17 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "server.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuvenalmash/ToDoList.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yuvenalmash/ToDoList/issues"
+  },
+  "homepage": "https://github.com/yuvenalmash/ToDoList#readme"
 }
