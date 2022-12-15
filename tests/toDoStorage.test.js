@@ -1,7 +1,17 @@
 import TodoStorage from "../src/modules/toDoStorage.js";
-import { setStatus, updateStatus } from "../src/modules/statusUpdate.js";
+import { updateStatus } from "../src/modules/statusUpdate.js";
 
 const storage = new TodoStorage();
+const newToDo = {
+  description: "do this and that",
+  completed: false,
+  index: 0,
+};
+const newToDo2 = {
+  description: "do this and that2",
+  completed: false,
+  index: 1,
+};
 
 describe("add todo()", () => {
   test("add todo", () => {
@@ -66,14 +76,22 @@ describe("Update completed tasks", () => {
   });
 });
 
-// test("clearCompleted should remove all completed items from the todo list", () => {
-//   const todoList = [
-//     { id: 1, description: "Wash the dishes", completed: false },
-//     { id: 2, description: "Do the laundry", completed: true },
-//     { id: 3, description: "Take out the trash", completed: true },
-//   ];
-
-//   const updatedTodoList = clearCompleted(todoList);
-//   expect(updatedTodoList.length).toBe(1);
-//   expect(updatedTodoList[0].id).toBe(1);
-// });
+describe('clear completed module',()=>{
+  test('clear completed',()=>{
+    storage.addToDo(newToDo);
+    storage.addToDo(newToDo2);
+    document.body.innerHTML =
+      "<div>" +
+      `<input id="check${newToDo.index}" type="checkbox" onchange="updateStatus(${newToDo.index})">
+      <p id="description${newToDo.index}" style="display:block;" onclick="edit(${newToDo.index})">${newToDo.description}</p>` +
+      `<input id="check${newToDo2.index}" type="checkbox" onchange="updateStatus(${newToDo2.index})">
+      <p id="description${newToDo2.index}" style="display:block;" onclick="edit(${newToDo2.index})">${newToDo2.description}</p>` +
+      "</div>";
+    document.getElementById(`check${newToDo.index}`).checked = true;
+    updateStatus(0)
+    storage.clearCompleted()
+    const toDoList = JSON.parse(localStorage.getItem("allEntries"));
+    console.log(toDoList)
+    expect(toDoList).not.toContainEqual(newToDo);
+  })
+})
