@@ -21,4 +21,14 @@ export default class TodoStorage {
     toDos[index].description = input;
     localStorage.setItem('allEntries', JSON.stringify(toDos));
   };
+
+  clearCompleted = () => {
+    let toDoList = JSON.parse(localStorage.getItem('allEntries'));
+    toDoList = toDoList.filter((toDo) => toDo.completed === false);
+  
+    for (let i = 0; i < toDoList.length; i += 1) {
+      toDoList[i].index = i + 1;
+    }
+    localStorage.setItem('allEntries', JSON.stringify(toDoList));
+  };
 }
