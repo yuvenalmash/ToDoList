@@ -15,11 +15,6 @@ const newToDo2 = {
 
 describe("add todo()", () => {
   test("add todo", () => {
-    const newToDo = {
-      descroption: "do this and that",
-      completed: false,
-      index: 0,
-    };
     storage.addToDo(newToDo);
     const toDoList = JSON.parse(localStorage.getItem("allEntries"));
     expect(toDoList).toContainEqual(newToDo);
@@ -36,42 +31,25 @@ describe("delete todo()", () => {
 
 describe("edit todo()", () => {
   test("editing todo tasks", () => {
-    const task = {
-      description: "Cat drinking milk",
-      completed: false,
-      index: 0,
-    };
-    storage.addToDo(task);
-    const index = 0;
-    const input = "Cat eating";
-
-    storage.saveToDo(index, input);
+    storage.addToDo(newToDo);
+    const input = "do this and that(Edited)";
+    storage.saveToDo(newToDo.index, input);
     const toDoList = JSON.parse(localStorage.getItem("allEntries"));
-
-    expect(toDoList[0].description).toBe("Cat eating");
+    expect(toDoList[0].description).toBe(input);
   });
 });
 
-describe("Update completed()", () => {
+describe("Update completed status()", () => {
   test("update completed status", () => {
-    const task1 = {
-      description: "Cat drinking milk",
-      completed: false,
-      index: 0,
-    };
-    const index = task1.index;
-    const description = task1.description;
     document.body.innerHTML =
       "<div>" +
-      `<input id="check${index}" type="checkbox" onchange="updateStatus(${index})">
-      <p id="description${index}" style="display:block;" onclick="edit(${index})">${description}</p>` +
+      `<input id="check${newToDo.index}" type="checkbox" onchange="updateStatus(${newToDo.index})">
+      <p id="description${newToDo.index}" style="display:block;" onclick="edit(${newToDo.index})">${newToDo.description}</p>` +
       "</div>";
-    storage.addToDo(task1);
-    document.getElementById(`check${index}`).checked = true;
-
+    storage.addToDo(newToDo);
+    document.getElementById(`check${newToDo.index}`).checked = true;
     updateStatus(0);
     const toDoList = JSON.parse(localStorage.getItem("allEntries"));
-
     expect(toDoList[0].completed).toBe(true);
   });
 });
