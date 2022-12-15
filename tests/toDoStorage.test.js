@@ -34,7 +34,7 @@ describe("delete todo()", () => {
   });
 });
 
-describe("To do list functions", () => {
+describe("edit todo()", () => {
   test("editing todo tasks", () => {
     const task = {
       description: "Cat drinking milk",
@@ -52,7 +52,7 @@ describe("To do list functions", () => {
   });
 });
 
-describe("Update completed tasks", () => {
+describe("Update completed()", () => {
   test("update completed status", () => {
     const task1 = {
       description: "Cat drinking milk",
@@ -76,7 +76,7 @@ describe("Update completed tasks", () => {
   });
 });
 
-describe('clear completed module',()=>{
+describe('clear completed()',()=>{
   test('clear completed',()=>{
     storage.addToDo(newToDo);
     storage.addToDo(newToDo2);
