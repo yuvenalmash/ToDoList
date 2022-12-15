@@ -25,7 +25,7 @@ export default class TodoStorage {
   clearCompleted = () => {
     let toDoList = JSON.parse(localStorage.getItem('allEntries'));
     toDoList = toDoList.filter((toDo) => toDo.completed === false);
-  
+
     for (let i = 0; i < toDoList.length; i += 1) {
       toDoList[i].index = i + 1;
     }

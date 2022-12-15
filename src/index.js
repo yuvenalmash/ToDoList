@@ -2,11 +2,11 @@ import './style.css';
 import { addIcons, toDos, add } from './modules/ui.js';
 import TodoStorage from './modules/toDoStorage.js';
 
-const clear = () =>{
+const clear = () => {
   const storage = new TodoStorage();
-  storage.clearCompleted()
-  toDos()
-}
+  storage.clearCompleted();
+  toDos();
+};
 
 addIcons();
 toDos();
